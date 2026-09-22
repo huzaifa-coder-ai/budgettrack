@@ -17,10 +17,8 @@ export default defineConfig({
         name: 'BudgetTrack',
         short_name: 'BudgetTrack',
         description: 'Track your expenses, budget and spending in one place.',
-
         theme_color: '#0f0d1a',
         background_color: '#0f0d1a',
-
         display: 'standalone',
         orientation: 'portrait-primary',
 
@@ -45,27 +43,6 @@ export default defineConfig({
 
       workbox: {
         navigateFallback: '/budgettrack/index.html',
-
-        runtimeCaching: [
-          {
-            urlPattern: /^https:\/\/cdnjs\.cloudflare\.com\/.*/i,
-
-            handler: 'CacheFirst',
-
-            options: {
-              cacheName: 'fontawesome-cdn',
-
-              expiration: {
-                maxEntries: 2,
-                maxAgeSeconds: 60 * 60 * 24 * 30,
-              },
-
-              cacheableResponse: {
-                statuses: [0, 200],
-              },
-            },
-          },
-        ],
       },
     }),
   ],
